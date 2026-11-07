@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Super Mario 2</title>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #222;
+      display: flex;
+      justify-content: center;
+    }
+    #game {
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+
+      player.style.width = "800px";
+      player.style.height = "600px";
+
+      document.getElementById("game").appendChild(player);
+      player.ruffle().load("super-mario-flash-2.swf");
+    });
+  </script>
+</body>
+</html>
